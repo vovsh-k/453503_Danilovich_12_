@@ -1,0 +1,149 @@
+:root {
+  color-scheme: light;
+  --bg: #f6f3ee;
+  --card: #ffffff;
+  --ink: #1b1a17;
+  --muted: #6d6761;
+  --accent: #b4532a;
+  --accent-dark: #7d3116;
+  --shadow: 0 24px 60px rgba(27, 26, 23, 0.15);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Georgia", "Times New Roman", serif;
+  background:
+    radial-gradient(circle at 20% 20%, #fff3e6 0%, transparent 55%),
+    radial-gradient(circle at 80% 10%, #f1e4d8 0%, transparent 40%),
+    var(--bg);
+  color: var(--ink);
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 40px 20px;
+}
+
+.card {
+  width: min(720px, 92vw);
+  background: var(--card);
+  border-radius: 20px;
+  padding: 36px 40px;
+  box-shadow: var(--shadow);
+  border: 1px solid #efe6dc;
+  display: grid;
+  gap: 28px;
+}
+
+.card__header {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 20px;
+  align-items: center;
+}
+
+.logo {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  background: var(--ink);
+  color: #fff8f0;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+  letter-spacing: 1px;
+}
+
+h1 {
+  font-size: 2rem;
+  line-height: 1.1;
+}
+
+.tagline {
+  color: var(--muted);
+  margin-top: 6px;
+  font-size: 1rem;
+}
+
+.pitch {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--ink);
+  max-width: 52ch;
+}
+
+.meta {
+  list-style: none;
+  margin-top: 18px;
+  display: grid;
+  gap: 8px;
+  color: var(--muted);
+}
+
+.meta span {
+  color: var(--ink);
+  font-weight: 600;
+  margin-right: 8px;
+}
+
+.card__footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 20px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btn {
+  background: var(--accent);
+  color: white;
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 999px;
+  font-weight: 600;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.btn:hover {
+  background: var(--accent-dark);
+  transform: translateY(-1px);
+}
+
+.links {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.links a {
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.links a:hover {
+  color: var(--ink);
+}
+
+@media (max-width: 560px) {
+  .card {
+    padding: 28px;
+  }
+
+  .card__header {
+    grid-template-columns: 1fr;
+  }
+
+  .logo {
+    width: 56px;
+    height: 56px;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+}
